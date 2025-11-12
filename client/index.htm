@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clima — API REST con secretos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-950 text-slate-100">
+    <header class="max-w-3xl mx-auto p-6">
+        <h1 class="text-3xl font-bold">
+            Clima — Consumo de API REST con secretos
+        </h1>
+        <p class="text-slate-300">
+            El cliente llama a un proxy Express; la API key vive en el servidor.
+        </p>
+    </header>
+
+    <main class="max-w-3xl mx-auto p-6">
+        <form id="form" class="flex gap-3 items-center">
+            <input id="city" class="flex-1 px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none"
+                placeholder="Escribe una ciudad… (p.ej. Querétaro)" />
+            <button class="px-4 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 font-semibold">
+                Buscar
+            </button>
+        </form>
+        <section id="result" class="mt-6"></section>
+
+        <section class="mt-10 text-sm text-slate-400">
+            <h2 class="text-slate-200 font-semibold mb-2">
+                ¿Cómo se protege el secreto?
+            </h2>
+            <ul class="list-disc pl-5 space-y-1">
+                <li>
+                    La API key está en <code>server/.env</code>, ignorado por Git.
+                </li>
+                <li>
+                    El navegador solo llama a <code>/api/weather</code> del servidor
+                    local.
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="max-w-3xl mx-auto p-6 text-xs text-slate-500">
+        Hecho con ♥ por Beto (y tu maestra Keine).
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
